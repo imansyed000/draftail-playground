@@ -15,6 +15,8 @@ import ImageSource from "../entities/ImageSource";
 import ImageBlock from "../entities/ImageBlock";
 import Link from "../entities/Link";
 import ReadingTime from "../extensions/ReadingTime";
+import Indent from "../extensions/Indent/Indent";
+import Dedent from "../extensions/Dedent/Dedent";
 import MaxLength, {
   MaxLengthDecorator,
 } from "../extensions/MaxLength/MaxLength";
@@ -120,7 +122,7 @@ const Editor = ({ rawContentState, onSave }: Props) => (
             icon: "#icon-code",
           },
         ]}
-        controls={[ReadingTime, MaxLength]}
+        controls={[ReadingTime, MaxLength, Indent, Dedent]}
         decorators={[new MaxLengthDecorator()]}
       />
     </SentryBoundary>
